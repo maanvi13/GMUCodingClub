@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GMU Coding Club</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* Dark blue-gray background */
+            color: #E5E7EB; /* Light gray text */
+        }
+
+        /* Custom scrollbar for a more modern feel */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #1F2937;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #4F46E5; /* Indigo */
+            border-radius: 10px;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6366F1;
+        }
+        
+        /* Animation for elements fading in on scroll */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+
+    <!-- Header & Navigation -->
+    <header class="bg-gray-900/80 backdrop-blur-sm fixed top-0 left-0 right-0 z-50">
+        <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">
+                GMU<span class="text-indigo-500">.Code</span>
+            </a>
+            <nav class="hidden md:flex space-x-8">
+                <a href="#home" class="text-gray-300 hover:text-indigo-400 transition duration-300">Home</a>
+                <a href="#events" class="text-gray-300 hover:text-indigo-400 transition duration-300">Events</a>
+                <a href="#projects" class="text-gray-300 hover:text-indigo-400 transition duration-300">Projects</a>
+                <a href="#quiz" class="text-gray-300 hover:text-indigo-400 transition duration-300">Quiz</a>
+                <a href="#join" class="text-gray-300 hover:text-indigo-400 transition duration-300">Join Us</a>
+            </nav>
+            <button id="mobile-menu-button" class="md:hidden text-white">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+            </button>
+        </div>
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="hidden md:hidden px-6 pb-4">
+            <a href="#home" class="block py-2 text-gray-300 hover:text-indigo-400">Home</a>
+            <a href="#events" class="block py-2 text-gray-300 hover:text-indigo-400">Events</a>
+            <a href="#projects" class="block py-2 text-gray-300 hover:text-indigo-400">Projects</a>
+            <a href="#quiz" class="block py-2 text-gray-300 hover:text-indigo-400">Quiz</a>
+            <a href="#join" class="block py-2 text-gray-300 hover:text-indigo-400">Join Us</a>
+        </div>
+    </header>
+
+    <main>
+        <!-- Home Section -->
+        <section id="home" class="min-h-screen flex items-center bg-cover bg-center" style="background-image: linear-gradient(rgba(17, 24, 39, 0.8), rgba(17, 24, 39, 0.9)), url('https://placehold.co/1920x1080/111827/4F46E5?text=GMU');">
+            <div class="container mx-auto px-6 text-center fade-in-section">
+                <h1 class="text-4xl md:text-6xl font-bold text-white mb-4">Welcome to the GMU Coding Club</h1>
+                <p class="text-lg md:text-xl text-gray-300 max-w-3xl mx-auto mb-8">
+                    Our mission is to foster a community of student developers, designers, and innovators. We aim to provide resources, host events, and build amazing projects together.
+                </p>
+                <a href="#join" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-8 rounded-full transition duration-300 text-lg">
+                    Become a Member
+                </a>
+            </div>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6 fade-in-section">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Upcoming Events</h2>
+                    <p class="text-gray-400 mt-2">Join us for workshops, competitions, and tech talks!</p>
+                </div>
+                <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Event Card 1 -->
+                    <div class="bg-gray-800 rounded-lg p-6 transform hover:scale-105 transition duration-300">
+                        <h3 class="text-xl font-bold text-white mb-2">Competitive Programming Kickstart</h3>
+                        <p class="text-indigo-400 mb-4">October 28, 2025</p>
+                        <p class="text-gray-300 mb-4">Get ready for upcoming hackathons and coding competitions with our prep workshop.</p>
+                        <a href="#" class="text-indigo-500 hover:text-indigo-400 font-semibold">Learn More &rarr;</a>
+                    </div>
+                    <!-- Event Card 2 -->
+                    <div class="bg-gray-800 rounded-lg p-6 transform hover:scale-105 transition duration-300">
+                        <h3 class="text-xl font-bold text-white mb-2">Intro to React Workshop</h3>
+                        <p class="text-indigo-400 mb-4">November 12, 2025</p>
+                        <p class="text-gray-300 mb-4">Learn the fundamentals of building interactive user interfaces with React.js.</p>
+                        <a href="#" class="text-indigo-500 hover:text-indigo-400 font-semibold">Register Now &rarr;</a>
+                    </div>
+                    <!-- Event Card 3 -->
+                    <div class="bg-gray-800 rounded-lg p-6 transform hover:scale-105 transition duration-300">
+                        <h3 class="text-xl font-bold text-white mb-2">Guest Speaker: AI & Machine Learning</h3>
+                        <p class="text-indigo-400 mb-4">November 25, 2025</p>
+                        <p class="text-gray-300 mb-4">A special talk from a Google engineer on the future of AI. Don't miss out!</p>
+                        <a href="#" class="text-indigo-500 hover:text-indigo-400 font-semibold">Get Details &rarr;</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Projects Section -->
+        <section id="projects" class="py-20">
+            <div class="container mx-auto px-6 fade-in-section">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Club Projects</h2>
+                    <p class="text-gray-400 mt-2">Check out what our members have built.</p>
+                </div>
+                <!-- Project Filters -->
+                <div id="project-filters" class="flex justify-center space-x-2 md:space-x-4 mb-8">
+                    <button class="filter-btn active bg-indigo-600 text-white py-2 px-4 rounded-full" data-filter="all">All</button>
+                    <button class="filter-btn bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-full" data-filter="web">Web Dev</button>
+                    <button class="filter-btn bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-full" data-filter="python">Python</button>
+                    <button class="filter-btn bg-gray-700 hover:bg-gray-600 text-white py-2 px-4 rounded-full" data-filter="ml">ML</button>
+                </div>
+                <!-- Project Grid -->
+                <div id="project-grid" class="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Project Card 1 -->
+                    <div class="project-card" data-category="web">
+                        <div class="bg-gray-800 rounded-lg overflow-hidden group">
+                            <img src="https://placehold.co/600x400/1F2937/E5E7EB?text=Campus+Navigator" alt="Project Image" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">Campus Navigator App</h3>
+                                <p class="text-gray-400 mb-4">An interactive map for the GMU campus built with React and Mapbox.</p>
+                                <p class="text-sm text-gray-500 mb-4">Contributors: A. Johnson, B. Williams</p>
+                                <button class="code-snippet-btn text-indigo-500 hover:text-indigo-400 font-semibold">View Code Snippet &rarr;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 2 -->
+                    <div class="project-card" data-category="python">
+                         <div class="bg-gray-800 rounded-lg overflow-hidden group">
+                            <img src="https://placehold.co/600x400/1F2937/E5E7EB?text=Discord+Bot" alt="Project Image" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">Club Discord Bot</h3>
+                                <p class="text-gray-400 mb-4">A multi-functional bot for our Discord server to manage roles and events.</p>
+                                <p class="text-sm text-gray-500 mb-4">Contributors: C. Davis</p>
+                                <button class="code-snippet-btn text-indigo-500 hover:text-indigo-400 font-semibold">View Code Snippet &rarr;</button>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Project Card 3 -->
+                    <div class="project-card" data-category="ml">
+                         <div class="bg-gray-800 rounded-lg overflow-hidden group">
+                            <img src="https://placehold.co/600x400/1F2937/E5E7EB?text=Sentiment+Analysis" alt="Project Image" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">Sentiment Analysis Tool</h3>
+                                <p class="text-gray-400 mb-4">A Python tool to analyze text sentiment using scikit-learn and NLTK.</p>
+                                 <p class="text-sm text-gray-500 mb-4">Contributors: D. Miller, E. Brown</p>
+                                <button class="code-snippet-btn text-indigo-500 hover:text-indigo-400 font-semibold">View Code Snippet &rarr;</button>
+                            </div>
+                        </div>
+                    </div>
+                     <!-- Project Card 4 -->
+                    <div class="project-card" data-category="web">
+                        <div class="bg-gray-800 rounded-lg overflow-hidden group">
+                            <img src="https://placehold.co/600x400/1F2937/E5E7EB?text=Task+Manager" alt="Project Image" class="w-full h-48 object-cover">
+                            <div class="p-6">
+                                <h3 class="text-xl font-bold text-white mb-2">Vue.js Task Manager</h3>
+                                <p class="text-gray-400 mb-4">A sleek and simple task management application built with Vue.js and Firebase.</p>
+                                <p class="text-sm text-gray-500 mb-4">Contributors: F. Wilson</p>
+                                <button class="code-snippet-btn text-indigo-500 hover:text-indigo-400 font-semibold">View Code Snippet &rarr;</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Interactive Quiz Section -->
+        <section id="quiz" class="py-20 bg-gray-900">
+            <div class="container mx-auto px-6 fade-in-section">
+                 <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Test Your Knowledge</h2>
+                    <p class="text-gray-400 mt-2">Take our quick coding quiz!</p>
+                </div>
+                <div id="quiz-container" class="max-w-2xl mx-auto bg-gray-800 p-8 rounded-lg">
+                    <!-- Quiz content will be injected here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Us Section -->
+        <section id="join" class="py-20">
+            <div class="container mx-auto px-6 fade-in-section">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Join the Club!</h2>
+                    <p class="text-gray-400 mt-2">Fill out the form below to become a member.</p>
+                </div>
+                <div class="max-w-xl mx-auto">
+                    <form id="join-form" class="bg-gray-800 p-8 rounded-lg">
+                        <div class="mb-4">
+                            <label for="name" class="block text-gray-300 mb-2">Full Name</label>
+                            <input type="text" id="name" class="w-full bg-gray-700 text-white rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        <div class="mb-4">
+                            <label for="email" class="block text-gray-300 mb-2">Email Address</label>
+                            <input type="email" id="email" class="w-full bg-gray-700 text-white rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        </div>
+                        <div class="mb-6">
+                            <label for="interest" class="block text-gray-300 mb-2">What are you interested in?</label>
+                            <select id="interest" class="w-full bg-gray-700 text-white rounded-md py-2 px-4 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                                <option>Web Development</option>
+                                <option>Machine Learning</option>
+                                <option>Game Development</option>
+                                <option>Competitive Programming</option>
+                            </select>
+                        </div>
+                        <button type="submit" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-md transition duration-300">
+                            Submit Application
+                        </button>
+                    </form>
+                    <p id="form-success-message" class="text-center text-green-400 mt-4 hidden">Thanks for joining! We'll be in touch soon.</p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900">
+        <div class="container mx-auto px-6 py-12">
+            <div class="md:flex md:justify-between items-center">
+                <div class="mb-8 md:mb-0 text-center md:text-left">
+                    <h3 class="text-2xl font-bold text-white">GMU<span class="text-indigo-500">.Code</span></h3>
+                    <p class="text-gray-400 mt-2">Connect, learn, and build with us.</p>
+                </div>
+                <div class="mb-8 md:mb-0">
+                    <h4 class="text-white font-semibold mb-4 text-center md:text-left">Subscribe to our Newsletter</h4>
+                    <form id="newsletter-form" class="flex flex-col sm:flex-row gap-2 justify-center">
+                        <input type="email" placeholder="your.email@example.com" class="bg-gray-800 text-white py-2 px-4 rounded-md focus:outline-none focus:ring-2 focus:ring-indigo-500 w-full sm:w-auto">
+                        <button type="submit" class="bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-2 px-4 rounded-md transition duration-300">
+                            Subscribe
+                        </button>
+                    </form>
+                     <p id="newsletter-success-message" class="text-center text-green-400 mt-2 hidden">Thank you for subscribing!</p>
+                </div>
+                <div class="flex justify-center space-x-6">
+                    <!-- Social Icons -->
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z" clip-rule="evenodd" /></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path d="M8.29 20.251c7.547 0 11.675-6.253 11.675-11.675 0-.178 0-.355-.012-.53A8.348 8.348 0 0022 5.92a8.19 8.19 0 01-2.357.646 4.118 4.118 0 001.804-2.27 8.224 8.224 0 01-2.605.996 4.107 4.107 0 00-6.993 3.743 11.65 11.65 0 01-8.457-4.287 4.106 4.106 0 001.27 5.477A4.072 4.072 0 012.8 9.71v.052a4.105 4.105 0 003.292 4.022 4.095 4.095 0 01-1.853.07 4.108 4.108 0 003.834 2.85A8.233 8.233 0 012 18.407a11.616 11.616 0 006.29 1.84" /></svg>
+                    </a>
+                    <a href="#" class="text-gray-400 hover:text-indigo-400 transition duration-300">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true"><path fill-rule="evenodd" d="M12 2C6.477 2 2 6.477 2 12s4.477 10 10 10 10-4.477 10-10S17.523 2 12 2zM8.207 8.207a4 4 0 014.492 2.05l.02.044a4 4 0 01-4.512 5.992L8.207 16a4 4 0 01-2.05-4.492l-.044-.02a4 4 0 015.992-4.512L12 7a4 4 0 012.793 1.207l.02.02.016.021a4 4 0 01-2.05 5.272l-.02.008a4 4 0 01-5.272-2.05l-.008-.02a4 4 0 012.05-5.272z" clip-rule="evenodd" /></svg>
+                    </a>
+                </div>
+            </div>
+            <div class="mt-8 border-t border-gray-700 pt-8 text-center text-gray-500">
+                &copy; 2025 GMU Coding Club. All Rights Reserved.
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Code Snippet Modal -->
+    <div id="code-modal" class="fixed inset-0 bg-black bg-opacity-75 flex items-center justify-center p-4 hidden z-50">
+        <div class="bg-gray-800 rounded-lg max-w-2xl w-full">
+            <div class="p-4 border-b border-gray-700 flex justify-between items-center">
+                <h3 class="text-white text-lg font-semibold">Code Snippet</h3>
+                <button id="close-modal-btn" class="text-gray-400 hover:text-white">&times;</button>
+            </div>
+            <div class="p-6">
+                <pre><code id="modal-code-content" class="language-js text-sm"></code></pre>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            // Mobile Menu Toggle
+            const mobileMenuButton = document.getElementById('mobile-menu-button');
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenuButton.addEventListener('click', () => {
+                mobileMenu.classList.toggle('hidden');
+            });
+
+            // Close mobile menu when a link is clicked
+            mobileMenu.addEventListener('click', (e) => {
+                if(e.target.tagName === 'A') {
+                    mobileMenu.classList.add('hidden');
+                }
+            });
+
+            // Project Filtering Logic
+            const filterContainer = document.getElementById('project-filters');
+            const projectGrid = document.getElementById('project-grid');
+            const projectCards = projectGrid.querySelectorAll('.project-card');
+            const filterButtons = filterContainer.querySelectorAll('.filter-btn');
+
+            filterContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('filter-btn')) {
+                    const filter = e.target.dataset.filter;
+
+                    // Update active button style
+                    filterButtons.forEach(btn => {
+                        btn.classList.remove('active', 'bg-indigo-600');
+                        btn.classList.add('bg-gray-700', 'hover:bg-gray-600');
+                    });
+                    e.target.classList.add('active', 'bg-indigo-600');
+                    e.target.classList.remove('bg-gray-700', 'hover:bg-gray-600');
+
+                    // Filter projects
+                    projectCards.forEach(card => {
+                        if (filter === 'all' || card.dataset.category === filter) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                }
+            });
+
+            // Quiz Logic
+            const quizContainer = document.getElementById('quiz-container');
+            const quizData = [
+                {
+                    question: "What does HTML stand for?",
+                    options: ["Hyper Text Markup Language", "High Tech Multi Language", "Home Tool Markup Language", "Hyperlink and Text Markup Language"],
+                    answer: "Hyper Text Markup Language"
+                },
+                {
+                    question: "Which property is used to change the background color in CSS?",
+                    options: ["color", "bgcolor", "background-color", "background"],
+                    answer: "background-color"
+                },
+                {
+                    question: "How do you declare a JavaScript variable?",
+                    options: ["variable carName;", "v carName;", "var carName;", "string carName;"],
+                    answer: "var carName;"
+                }
+            ];
+            
+            let currentQuestionIndex = 0;
+            let score = 0;
+
+            function loadQuiz() {
+                if (currentQuestionIndex < quizData.length) {
+                    const currentQuestion = quizData[currentQuestionIndex];
+                    quizContainer.innerHTML = `
+                        <h3 class="text-xl font-bold text-white mb-4">${currentQuestion.question}</h3>
+                        <div class="space-y-4">
+                            ${currentQuestion.options.map(option => `
+                                <button class="quiz-option w-full text-left bg-gray-700 p-4 rounded-md hover:bg-gray-600 transition duration-200">${option}</button>
+                            `).join('')}
+                        </div>
+                    `;
+                } else {
+                    // Show results
+                    quizContainer.innerHTML = `
+                        <h3 class="text-2xl font-bold text-white text-center">Quiz Complete!</h3>
+                        <p class="text-center text-lg text-gray-300 my-4">You scored ${score} out of ${quizData.length}</p>
+                        <button id="retake-quiz-btn" class="w-full bg-indigo-600 hover:bg-indigo-700 text-white font-bold py-3 px-6 rounded-md transition duration-300">
+                            Retake Quiz
+                        </button>
+                    `;
+                    document.getElementById('retake-quiz-btn').addEventListener('click', () => {
+                        currentQuestionIndex = 0;
+                        score = 0;
+                        loadQuiz();
+                    });
+                }
+            }
+
+            quizContainer.addEventListener('click', (e) => {
+                if (e.target.classList.contains('quiz-option')) {
+                    const selectedAnswer = e.target.textContent;
+                    if (selectedAnswer === quizData[currentQuestionIndex].answer) {
+                        score++;
+                    }
+                    currentQuestionIndex++;
+                    loadQuiz();
+                }
+            });
+            
+            loadQuiz();
+            
+            // Form submission handlers
+            const joinForm = document.getElementById('join-form');
+            const formSuccessMessage = document.getElementById('form-success-message');
+            joinForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                formSuccessMessage.classList.remove('hidden');
+                joinForm.reset();
+                setTimeout(() => formSuccessMessage.classList.add('hidden'), 4000);
+            });
+            
+            const newsletterForm = document.getElementById('newsletter-form');
+            const newsletterSuccessMessage = document.getElementById('newsletter-success-message');
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                newsletterSuccessMessage.classList.remove('hidden');
+                newsletterForm.reset();
+                setTimeout(() => newsletterSuccessMessage.classList.add('hidden'), 4000);
+            });
+
+            // Code Snippet Modal Logic
+            const codeModal = document.getElementById('code-modal');
+            const closeModalBtn = document.getElementById('close-modal-btn');
+            const modalCodeContent = document.getElementById('modal-code-content');
+            
+            const snippets = {
+                'Campus Navigator App': `import React from 'react';
+import MapGL from 'react-map-gl';
+
+const Map = () => (
+  <MapGL
+    mapboxApiAccessToken={process.env.MAPBOX_TOKEN}
+    initialViewState={{
+      longitude: -77.30,
+      latitude: 38.83,
+      zoom: 14
+    }}
+  />
+);`,
+                'Club Discord Bot': `import discord
+from discord.ext import commands
+
+bot = commands.Bot(command_prefix='!')
+
+@bot.command()
+async def hello(ctx):
+    await ctx.send('Hello from the GMU Bot!')
+
+bot.run('YOUR_BOT_TOKEN')`,
+                'Sentiment Analysis Tool': `from textblob import TextBlob
+
+text = "GMU Coding Club is an amazing community!"
+blob = TextBlob(text)
+sentiment = blob.sentiment.polarity 
+
+print(f"Sentiment score: {sentiment}")`,
+                'Vue.js Task Manager': `<template>
+  <div>
+    <input v-model="newTask" @keyup.enter="addTask">
+    <ul>
+      <li v-for="task in tasks">{{ task.text }}</li>
+    </ul>
+  </div>
+</template>
+`
+            };
+
+            document.querySelectorAll('.code-snippet-btn').forEach(button => {
+                button.addEventListener('click', (e) => {
+                    const card = e.target.closest('.p-6');
+                    const title = card.querySelector('h3').textContent;
+                    modalCodeContent.textContent = snippets[title] || 'No snippet available.';
+                    codeModal.classList.remove('hidden');
+                });
+            });
+
+            closeModalBtn.addEventListener('click', () => {
+                codeModal.classList.add('hidden');
+            });
+            
+            codeModal.addEventListener('click', (e) => {
+                if (e.target === codeModal) {
+                    codeModal.classList.add('hidden');
+                }
+            });
+            
+            // Fade-in animation on scroll
+            const sections = document.querySelectorAll('.fade-in-section');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, { threshold: 0.1 });
+
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body>
+</html>
